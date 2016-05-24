@@ -1,11 +1,10 @@
 {
-	page_num: 1,
-	lists: [
-		{num: 1, author: 'luozh', contents: '123', remark: 'dsds'},
-		{num: 1, author: 'luozh', contents: '123', remark: 'dsds'},
-		{num: 1, author: 'luozh', contents: '123', remark: 'dsds'},
-		{num: 1, author: 'luozh', contents: '123', remark: 'dsds'},
-		{num: 1, author: 'luozh', contents: '123', remark: 'dsds'},
-		{num: 1, author: 'luozh', contents: '123', remark: 'dsds'}
+	"page_num": 1,
+	"lists": [
+        {"num": 1, "author": "luozh", "contents": "123", "remark": "dsds"},
+        {"num": 1, "author": "luozh", "contents": "123", "remark": "dsds"},
+        {"num": 1, "author": "luozh", "contents": "123", "remark": "dsds"},
+        {"num": 1, "author": "luozh", "contents": "123", "remark": "dsds"},
+		{"num": 1, "author": "luozh", "contents": "123", "remark": "dsds"}
 	]
 }
