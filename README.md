@@ -124,7 +124,7 @@ HTML文档:
 ```
 
 组件自带向服务器传递的参数为:
-```json
+```javascript
     {
         active: 1, // 当前页码
         length: 5  // 每页显示个数
@@ -132,7 +132,7 @@ HTML文档:
 ```
 
 服务器回传的参数需为:
-```json
+```javascript
     {
         data: [], // 表格数据
         page_num: 5  // 总页数
