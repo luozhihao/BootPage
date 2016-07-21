@@ -1,7 +1,7 @@
 {
-  "name": "vuex",
+  "name": "BootPage",
   "version": "0.0.1",
-  "description": "EventsPlatform of snail",
+  "description": "table component of vue",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet",
@@ -17,6 +17,7 @@
     "babel-preset-stage-0": "^6.1.18",
     "babel-runtime": "^6.2.0",
     "css-loader": "^0.23.0",
+    "file-loader": "^0.9.0",
     "imports-loader": "^0.6.5",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
@@ -28,7 +29,6 @@
   },
   "dependencies": {
     "vue": "^1.0.18",
-    "vuex": "^0.6.3",
     "vue-router": "^0.7.7"
   }
 }

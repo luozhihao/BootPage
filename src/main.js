@@ -1,19 +1,17 @@
 /**
   * 
-  * @authors luozh@snail.com
-  * @date    2016-04-26 15:08:35
+  * @authors luozh
+  * @date    2016-07-21 15:08:35
   * @description 主入口模块
   */
 
 import Vue from 'vue'
 import Vue_Router from 'vue-router'
-import Vue_Resource from 'vue-resource'
 
 import routerMap from './routers.js'
 import App from './App.vue'
 
 Vue.use(Vue_Router)
-Vue.use(Vue_Resource)
 
 var router = new Vue_Router({
     hashbang: true,

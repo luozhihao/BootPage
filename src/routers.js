@@ -1,7 +1,7 @@
 /**
  * 
- * @authors luozh@snail.com
- * @date    2016-03-21 17:04:26
+ * @authors luozh
+ * @date    2016-07-21 17:04:26
  * @description 路由配置
  */
 

@@ -1,13 +1,15 @@
 <!-- 表格分页组件 -->
 <template>
-    <select class="form-control boot-select" v-model="len">
-        <option v-for="arr in lens" :value="arr" v-text="arr" :selected="$index === 0 ? true : false"></option>
-    </select>
     <nav class="boot-nav">
         <ul class="pagination boot-page">
             <li>
-                <a href="javascript:void(0)" aria-label="Previous" @click="onPrevClick()">
+                <a href="javascript:void(0)" aria-label="Previous" @click="onFirstClick()">
                     <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" aria-label="Next" @click="onPrevClick()">
+                    <span aria-hidden="true">‹</span>
                 </a>
             </li>
             <li v-for="page in pages" :class="activeNum === $index ? 'active' : ''">
@@ -15,6 +17,11 @@
             </li>
             <li>
                 <a href="javascript:void(0)" aria-label="Next" @click="onNextClick()">
+                    <span aria-hidden="true">›</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" aria-label="Next" @click="onLastClick()">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>
@@ -23,6 +30,9 @@
             共 <span v-text="pageTotal"></span> 页
         </div>
     </nav>
+    <select class="form-control boot-select" v-model="len">
+        <option v-for="arr in lens" :value="arr" v-text="arr" :selected="$index === 0 ? true : false"></option>
+    </select>
 </template>
 
 <script>
@@ -144,6 +154,38 @@ export default {
             }
         },
 
+        // 第一页
+        onFirstClick () {
+            if (this.pages[0] === 1) {
+                this.activeNum = 0
+            } else {
+                let originPage = []
+
+                for (let i = 1; i <= this.pageLen; i++) {
+                    originPage.push(i)
+                }
+
+                this.pages = originPage
+                this.activeNum = 0
+            }
+        },
+
+        // 最后一页
+        onLastClick () {
+            if (this.pageTotal <= this.pageLen) {
+                this.activeNum = this.pages.length - 1
+            } else {
+                let lastPage = []
+
+                for (let i = this.pageLen - 1; i >= 0; i--) {
+                    lastPage.push(this.pageTotal - i)
+                }
+
+                this.pages = lastPage
+                this.activeNum = this.pages.length - 1
+            }
+        },
+
         // 获取页码
         getPages () {
             this.pages = []
@@ -192,6 +234,10 @@ export default {
                         this.getPages()
                     }
 
+                    if (!response.data.data.length) {
+                        this.activeNum = this.pageTotal - 1
+                    }
+
                     this.$dispatch('data', response.data)
                 })
             }
@@ -199,22 +245,22 @@ export default {
 
         // 刷新表格
         refresh () {
+            this.getData()
+        },
+
+        // 重置并刷新表格
+        refresh2 () {
             this.pages = [1]
 
             this.activeNum = 0
-
-            this.getData()
         }
     },
     ready () {
         if (!this.async) {
             this.getPages()
-            this.getData()
+        } 
 
-            let _this = this
-        } else {
-            this.getData()
-        }
+        this.getData()
     },
     watch: {
 
@@ -223,15 +269,13 @@ export default {
             if (!this.async) {
                 this.getPages()
 
-                let _this = this
-
                 if (this.activeNum + 1 > this.pages.length) {
                     this.activeNum = this.pages.length - 1
                 }
 
                 this.getData()
             } else {
-                this.refresh()
+                this.refresh2()
             }
         },
 
@@ -241,7 +285,7 @@ export default {
         }
     },
     events: {
-        'refresh' () {
+        'refresh::page' () {
             this.refresh()
         }
     }
@@ -250,7 +294,7 @@ export default {
 
 <style scoped>
 .boot-select {
-    float: left;
+    float: right;
     width: 80px;
 }
 
