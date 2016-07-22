@@ -251,8 +251,12 @@ export default {
         // 重置并刷新表格
         refresh2 () {
             this.pages = [1]
-
-            this.activeNum = 0
+                        
+            if (this.activeNum === 0) {
+                this.getData()
+            } else {
+                this.activeNum = 0
+            }
         }
     },
     ready () {
