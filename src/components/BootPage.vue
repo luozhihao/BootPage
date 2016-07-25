@@ -166,7 +166,7 @@ export default {
                 }
 
                 this.pages = originPage
-                this.activeNum = 0
+                this.activeNum === 0 ? this.getData() : this.activeNum = 0
             }
         },
 
@@ -182,7 +182,7 @@ export default {
                 }
 
                 this.pages = lastPage
-                this.activeNum = this.pages.length - 1
+                this.activeNum === this.pages.length - 1 ? this.getData() : this.activeNum = this.pages.length - 1
             }
         },
 
@@ -252,11 +252,7 @@ export default {
         refresh2 () {
             this.pages = [1]
                         
-            if (this.activeNum === 0) {
-                this.getData()
-            } else {
-                this.activeNum = 0
-            }
+            this.activeNum === 0 ? this.getData() : this.activeNum = 0
         }
     },
     ready () {
