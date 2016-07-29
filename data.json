@@ -1,6 +1,6 @@
 {
 	"page_num": 1,
-	"lists": [
+	"data": [
         {"num": 1, "author": "luozh", "contents": "123", "remark": "dsds"},
         {"num": 1, "author": "luozh", "contents": "123", "remark": "dsds"},
         {"num": 1, "author": "luozh", "contents": "123", "remark": "dsds"},
