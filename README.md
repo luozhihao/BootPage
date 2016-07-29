@@ -1,7 +1,7 @@
 BootPage
 ---
 
-## 组件介绍111
+## 组件介绍
 一款支持静态数据和服务器数据的表格分页组件，支持调整每页显示行数和页码显示个数，样式基于bootstrap
 
 ![image](https://github.com/luozhihao/BootPage/blob/master/src/assets/images/demo.gif)
