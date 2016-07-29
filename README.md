@@ -6,6 +6,8 @@ BootPage
 
 ![image](https://github.com/luozhihao/BootPage/blob/master/src/assets/images/demo.gif)
 
+演示地址：https://luozhihao.github.io/BootPage/index.html#!/
+
 ## 如何使用
 
 HTML文档:
