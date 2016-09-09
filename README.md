@@ -3,7 +3,7 @@ BootPage
 
 ## 组件介绍
 一款支持静态数据和服务器数据的表格分页组件，支持调整每页显示行数和页码显示个数，样式基于bootstrap
-注：在使用ES6及vue-loader的vue项目中才能使用本组件，请求本地json文件数据可能会失败，请使用服务器端数据测试
+> 注：在使用ES6及vue-loader的vue项目中才能使用本组件，请求本地json文件数据可能会失败，请使用服务器端数据测试
 
 ![image](https://github.com/luozhihao/BootPage/blob/master/src/assets/images/demo.gif)
 
