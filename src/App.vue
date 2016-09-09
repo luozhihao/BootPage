@@ -67,8 +67,8 @@ export default {
     events: {
 
         // 分页组件传回的表格数据
-        'data' (param) {
-            this.tableList = param.data
+        'data' (data) {
+            this.tableList = data
         },
 
         // 刷新数据

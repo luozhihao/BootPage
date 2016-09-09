@@ -238,7 +238,7 @@ export default {
                         this.activeNum = this.pageTotal - 1
                     }
 
-                    this.$dispatch('data', response.data)
+                    this.$dispatch('data', response.data.data)
                 })
             }
         },
