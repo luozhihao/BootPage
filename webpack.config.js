@@ -34,6 +34,10 @@ module.exports = {
             { 
                 test: /\.(woff|svg|eot|ttf)\??.*$/,
                 loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+            },
+            { 
+                test: /\.json$/,
+                loader: 'json-loader' 
             }
         ]
     },
